@@ -22,7 +22,7 @@
     };
 
     var updateLetterToGuess = function(){
-      this.letterToGuess = this.computerLetters[Math.floor( this.computerLetters.length * Math.random() )];
+      letterToGuess = computerLetters[Math.floor(Math.random() * computerLetters.length)];
     };
 
     //Updates letters that were guessed so far
@@ -55,13 +55,14 @@
           if (userGuess == letterToGuess){
             wins++;
             document.querySelector('#wins').innerHTML = "Wins: " + wins;
-            alert ("You're right! The letter was " + computerGuess.toUpperCase());
+          console.log( computerGuess.toUpperCase() );
               reset();
             }
+
           }else if (guessesRemaining == 0) {
             losses++;
             document.querySelector('#losses').innerHTML = "Losses: " + losses;
-            alert("Nope! The correct letter was " + computerGuess.toUpperCase() + " try again!");
+          console.log( computerGuess.toUpperCase() );
             reset();
           }
         
